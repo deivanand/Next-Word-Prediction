@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Next Word Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        text-shadow: 2px 2px #ff0000;
+      }
+      .gradient {
+        background: linear-gradient(to right, #007bff, #ffffff);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+      }
+      input[type="text"] {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid black;
+        border-radius: 4px;
+      }
+      input[type="submit"] {
+        width: 30%;
+        background-color: #007bff;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .output-box {
+        display: inline-block;
+        width: 30%;
+        margin-right: 10px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Next Word Prediction</h1>
+    <div style="text-align:center;">
+      <form method="post">
+        <label for="text">Please type a word / sentence here!</label><br>
+        <input type="text" name="text" id="text">
+        <br><br>
+        <input type="submit" value="Predict">
+      </form>
+    </div>
+    {% if error %}
+      <p>{{ error }}</p>
+    {% elif pred_words %}
+      <h2>Next word suggestions:</h2>
+      {% for word in pred_words %}
+          <div class="output-box">{{ word }}</div>
+      {% endfor %}
+    {% endif %}
+    <p style="text-align:center;">This model works only for Artificial Intelligence and Machine Learning terms due to the constraint in dataset which contains only Abstracts from ArXiv Website of Data Science Domain.</p>
+  </body>
+</html>
