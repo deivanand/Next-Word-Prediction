@@ -1,6 +1,6 @@
 # Next-Word-Prediction
 
-This is my final year project, done under the guidance of the faculty at Vellore Institute of Technology Chennai.
+This is my thesis done under the guidance of the faculty at Vellore Institute of Technology Chennai.
 
 In order to deploy the project run app.py from the python command prompt.
 
